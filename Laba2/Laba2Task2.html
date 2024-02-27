@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Форма регистрации на сайт</title>
+    </head>
+    <body>
+        <article><h1>Регистрация</h1></article>
+        <fieldset>
+            <legend>Личные данные</legend>
+            Введите ФИО: <br>
+            <input type="text" size="10" maxlength="16" placeholder="Ваша фамилия">
+            <input type="text" size="10" maxlength="16" placeholder="Ваше имя"> <br>
+            <input type="text" size="10" maxlength="16" placeholder="Ваше отчество"> <br>
+            Пароль: <input type="password" size="16">  <br>
+            Ваш пол: 
+            <label><input type="radio" name="пол" value="male" checked="checked"> муж</label>          
+            <label><input type="radio" name="пол" value="female"> жен </label><br>
+            Дата рождения <input type="date" id="dateOfBirth">
+        </fieldset>
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <input type="tel" id="phone" placeholder="Номер телефона" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <br>
+            <input type="email" id="email" placeholder="Адрес электроной почты">  <br>
+        </fieldset>
+        <fieldset>
+            <legend>Информация для доставки</legend>
+            Ваш город: 
+            <select name="city">
+            <option>Ангарск</option>
+            <option selected="selected">Иркутск</option>
+            <option>Улан-Удэ</option>
+            <option>Шелехово</option>
+            </select> <br>
+            
+            <input type="tel" maxlength="6" placeholder="Почтовый индекс" pattern="[0-9]{6}"> 
+            <input type="text" placeholder="Улица"><br>
+            <input type="text" placeholder="Номер дома">
+            <input type="text" placeholder="Номер квартиры">
+        </fieldset>
+        <fieldset>
+            <legend>Привязка карты</legend>
+            <label><input type="radio" name="cc" value="mir"> МИР</label>
+            <label><input type="radio" name="cc" value="visa" checked="checked"> Visa</label>
+            <label><input type="radio" name="cc" value="mastercard"> MasterCard</label> <br>
+            <input type="text" id="card" placeholder="Номер банковской карты"> <br>
+            <input type="text" id="cardDate" maxlength="5" placeholder="Срок годности">
+            <input type="text" id="cardCVV" maxlength="5" placeholder="CVV код">
+        </fieldset>
+        <input type="submit" value="Вход">
+        
+        
+        
+    </body>
+</html>
