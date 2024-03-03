@@ -5,50 +5,85 @@
         <title>Форма регистрации на сайт</title>
     </head>
     <body>
+        <input type="search" size="48" maxlength="64" placeholder="Поиск по сайту"><br>
         <article><h1>Регистрация</h1></article>
         <fieldset>
-            <legend>Личные данные</legend>
+            <legend>Личные данные*</legend>
             Введите ФИО: <br>
-            <input type="text" size="10" maxlength="16" placeholder="Ваша фамилия">
-            <input type="text" size="10" maxlength="16" placeholder="Ваше имя"> <br>
-            <input type="text" size="10" maxlength="16" placeholder="Ваше отчество"> <br>
-            Пароль: <input type="password" size="16">  <br>
+            <input type="text" required="required" size="10" maxlength="16" placeholder="Ваша фамилия">
+            <input type="text" required="required" size="10" maxlength="16" placeholder="Ваше имя"> <br>
+            <input type="text" required="required" size="10" maxlength="16" placeholder="Ваше отчество"> <br>
+            Пароль: <input type="password" required="required" size="16">  <br>
             Ваш пол: 
             <label><input type="radio" name="пол" value="male" checked="checked"> муж</label>          
             <label><input type="radio" name="пол" value="female"> жен </label><br>
-            Дата рождения <input type="date" id="dateOfBirth">
+            Дата рождения <input type="date" required="required" id="dateOfBirth">
         </fieldset>
         <fieldset>
-            <legend>Контактная информация</legend>
-            <input type="tel" id="phone" placeholder="Номер телефона" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <br>
-            <input type="email" id="email" placeholder="Адрес электроной почты">  <br>
+            <legend>Контактная информация*</legend>
+            <input type="tel" required="required" id="phone" placeholder="Номер телефона" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"> <br>
+            <input type="email" required="required" id="email" placeholder="Адрес электроной почты">  <br>
+            <input type="url" required="required" id="vk" placeholder="Страница Вконтакте"> <br>
         </fieldset>
         <fieldset>
             <legend>Информация для доставки</legend>
             Ваш город: 
             <select name="city">
-            <option>Ангарск</option>
-            <option selected="selected">Иркутск</option>
-            <option>Улан-Удэ</option>
-            <option>Шелехово</option>
+                <optgroup label="Иркутская область">
+                    <option>Ангарск</option>
+                    <option>Братск</option>
+                    <option>Иркутск</option>
+                  </optgroup>
+                  <optgroup label="Республика Бурятия">
+                    <option>Гусиноозёрск</option>
+                    <option>Северобайкальск</option>
+                    <option>Улан-Удэ</option>
+                  </optgroup>
             </select> <br>
             
             <input type="tel" maxlength="6" placeholder="Почтовый индекс" pattern="[0-9]{6}"> 
             <input type="text" placeholder="Улица"><br>
             <input type="text" placeholder="Номер дома">
-            <input type="text" placeholder="Номер квартиры">
+            <input type="text" placeholder="Номер квартиры"> <br>
+
+            Удобное время доставки: <br>
+            <input type="datetime-local"><br>
+            Предпочитаемый цвет подярочной упаковки:
+            <input type="color"><br>
+            
+            <label for="delivery-choice">Выберите тип доставки:</label>
+            <input list="types-of-delivery" id="delivery-choice" name="delivery-choice" />
+
+            <datalist id="types-of-delivery">
+                <option value="Почта России"></option>
+                <option value="Курьерская"></option>
+                <option value="Срочная курьерская"></option>
+            </datalist><br>
+            Введите комментарий для доставщика:<br>
+            <textarea rows="5" cols="20"></textarea><br>
+            Или выберите текстовый файл:<br>
+            <input type="file">
+
         </fieldset>
         <fieldset>
             <legend>Привязка карты</legend>
             <label><input type="radio" name="cc" value="mir"> МИР</label>
             <label><input type="radio" name="cc" value="visa" checked="checked"> Visa</label>
             <label><input type="radio" name="cc" value="mastercard"> MasterCard</label> <br>
-            <input type="text" id="card" placeholder="Номер банковской карты"> <br>
-            <input type="text" id="cardDate" maxlength="5" placeholder="Срок годности">
-            <input type="text" id="cardCVV" maxlength="5" placeholder="CVV код">
+            <input type="text" id="card" size="32" placeholder="Номер банковской карты"> <br>
+            <input type="text" id="cardDate" size="11" maxlength="5" placeholder="Срок годности">
+            <input type="text" id="cardCVV" size="15" maxlength="5" placeholder="CVV код">
         </fieldset>
-        <input type="submit" value="Вход">
+        <fieldset>
+            Оцените сервис:<br>
+            <input type="number" min="1" max="10" step="1" value="10"><br>
+            Выберите уровень доставки:<br>
+            1 <input type="range" min="1" max="10" step="1" value="1"> 10<br>
         
+            * &#8211; поля, обязательные для заполнения. <br>
+            <input type="submit" value="Вход">
+            <input type="reset" value="Сбросить">
+        </fieldset>
         
         
     </body>
