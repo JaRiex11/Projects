@@ -1,0 +1,48 @@
+* {
+    background-color: rgba(187, 255, 201, 0.4);
+}
+header {
+    background-color: rgba(17, 233, 61, 0.4);
+    text-align: center;
+    
+}
+footer {
+    text-align: end;
+    background-color: rgba(187, 255, 201, 0.4);
+    font-style: oblique;
+}
+h1 {
+    color: rgb(15, 38, 67);
+    border: 1px solid rgba(159, 208, 251, 0.819);
+    font-size: xx-large;
+    font-family: Monospace, 'Arial';
+    font-style: normal;
+    text-decoration: none;
+}
+
+p {
+    color: rgb(13, 75, 69);
+    font-size: medium;
+    font-family: 'Arial';
+    font-style: normal;
+}
+nav{
+    font-size: large;
+    font-family: 'Arial';
+    font-style: normal;
+    color: black;
+    border: 1px solid rgba(159, 208, 251, 0.819);
+    background-color: rgba(1, 255, 52, 0.4);
+}
+nav a{
+    font-size: large;
+    font-family: 'Arial';
+    font-style: normal;
+    background-color: rgba(17, 233, 60, 0.149);
+}
+body {
+    width: 94.5%;
+    border: 100px;
+    padding: 25px;
+    margin: 25px;
+}
