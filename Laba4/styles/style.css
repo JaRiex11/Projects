@@ -1,0 +1,38 @@
+* /* 0.0.0.0 */ {
+    --bg-color: #EDE1D0;
+    background-color: var(--bg-color);
+    font-family: Monospace, 'Arial';
+    width: 94.5%;
+}
+body /* 0.0.0.1 */{
+    width: clamp(20px, 60%, 1000px);
+}
+h1 /* 0.0.0.1 */{
+    text-align: center;
+    font-size: xx-large;
+    font-family: Monospace, 'Arial';
+    font-style: normal;
+    text-decoration: none;
+}
+#intro /* 0.1.0.0 */{
+    color: red;
+}
+#intro h2 /* 0.1.0.1 */{
+    color: blue;
+}
+#content div /* 0.1.0.1 */{
+    color: green;
+}
+.bordered /* 0.0.1.0 */{
+    color: rgb(200, 142, 255);
+}
+.bordered /* 0.0.1.0 */{
+    color: rgb(70, 28, 112) !important;
+}
+h2 .bordered /* 0.0.1.1 */{ 
+    text-align: center;
+    color: yellow
+}
+::after .bordered /* 0.0.2.0 */{
+    color: yellow;
+}
