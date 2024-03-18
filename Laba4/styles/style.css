@@ -7,6 +7,7 @@
 body /* 0.0.0.1 */{
     width: clamp(20px, 60%, 1000px);
 }
+
 h1 /* 0.0.0.1 */{
     text-align: center;
     font-size: xx-large;
@@ -20,7 +21,7 @@ h1 /* 0.0.0.1 */{
 #intro h2 /* 0.1.0.1 */{
     color: blue;
 }
-#content div /* 0.1.0.1 */{
+#content > div /* 0.1.0.1 */{
     color: green;
 }
 .bordered /* 0.0.1.0 */{
