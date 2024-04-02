@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Форма регистрации на сайт</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="uikit-3.19.2/css/uikit-rtl.css">
+    </head>
+    <body>
+        <form>
+            <input type="search" size="48" maxlength="64" placeholder="Поиск по сайту"><br>
+            <article><h1>Регистрация</h1></article>
+            <fieldset>
+                <legend>Личные данные*</legend>
+                Введите ФИО: <br>
+                <input type="text" required="required" size="10" maxlength="16" placeholder="Ваша фамилия">
+                <input type="text" required="required" size="10" maxlength="16" placeholder="Ваше имя"> <br>
+                <input type="text" required="required" size="10" maxlength="16" placeholder="Ваше отчество"> <br>
+                Пароль: <input type="password" required="required" size="16">  <br>
+                Ваш пол: 
+                <label><input type="radio" name="пол" value="male" checked="checked"> муж</label>          
+                <label><input type="radio" name="пол" value="female"> жен </label><br>
+                Дата рождения <input type="date" required="required" id="dateOfBirth">
+            </fieldset>
+            <fieldset>
+                <legend>Контактная информация*</legend>
+                <input type="tel" required="required" id="phone" placeholder="Номер телефона" pattern="+7-[0-9]{3}-[0-9]{3}-[0-9]{4}"> <br>
+                <input type="email" required="required" id="email" placeholder="Адрес электроной почты">  <br>
+                <input type="url" required="required" id="vk" placeholder="Страница Вконтакте"> <br>
+            </fieldset>
+            <fieldset>
+                <legend>Информация для доставки</legend>
+                Ваш город: 
+                <select name="city">
+                    <optgroup label="Иркутская область">
+                        <option>Ангарск</option>
+                        <option>Братск</option>
+                        <option>Иркутск</option>
+                    </optgroup>
+                    <optgroup label="Республика Бурятия">
+                        <option>Гусиноозёрск</option>
+                        <option>Северобайкальск</option>
+                        <option>Улан-Удэ</option>
+                    </optgroup>
+                </select> <br>
+                
+                <input type="tel" maxlength="6" placeholder="Почтовый индекс" pattern="[0-9]{6}"> 
+                <input type="text" placeholder="Улица"><br>
+                <input type="text" placeholder="Номер дома">
+                <input type="text" placeholder="Номер квартиры"> <br>
+
+                Удобное время доставки: <br>
+                <input type="datetime-local"><br>
+                Предпочитаемый цвет подярочной упаковки:
+                <input type="color"><br>
+                
+                <label for="delivery-choice">Выберите тип доставки:</label>
+                <input list="types-of-delivery" id="delivery-choice" name="delivery-choice" />
+
+                <datalist id="types-of-delivery">
+                    <option value="Почта России"></option>
+                    <option value="Курьерская"></option>
+                    <option value="Срочная курьерская"></option>
+                </datalist><br>
+                Введите комментарий для доставщика:<br>
+                <textarea rows="5" cols="20"></textarea><br>
+                Или выберите текстовый файл:<br>
+                <input type="file">
+
+            </fieldset>
+            <fieldset>
+                <legend>Привязка карты</legend>
+                <label><input type="radio" name="cc" value="mir"> МИР</label>
+                <label><input type="radio" name="cc" value="visa" checked="checked"> Visa</label>
+                <label><input type="radio" name="cc" value="mastercard"> MasterCard</label> <br>
+                <input type="text" id="card" size="32" placeholder="Номер банковской карты"> <br>
+                <input type="text" id="cardDate" size="11" maxlength="5" placeholder="Срок годности">
+                <input type="text" id="cardCVV" size="15" maxlength="5" placeholder="CVV код">
+            </fieldset>
+            <fieldset>
+                Оцените сервис:<br>
+                <input type="number" min="1" max="10" step="1" value="10"><br>
+                Выберите уровень доставки:<br>
+                1 <input type="range" min="1" max="10" step="1" value="1"> 10<br>
+            
+                * &#8211; поля, обязательные для заполнения. <br>
+                <input type="submit" value="Вход">
+                <input type="reset" value="Сбросить">
+            </fieldset>
+        </form>
+        <table>
+            <colgroup>
+                <col  style="background-color:rgb(93, 238, 56)">
+                <col  style="background-color:rgb(93, 238, 56)">
+                <col span="2" style="background-color:rgb(105, 213, 246)">
+            </colgroup>
+            <thead> <!-- "головы" таблицы как таковой в моём варианте нет, так что мне пришлось её выдумать -->
+                <tr><th>День</th><th>Часы</th><th colspan="2">Предмет и кабинет</th></tr>
+            </thead>
+            <tbody>
+                <tr><th rowspan="4">СР</th><td rowspan="2">09:00 - 10:30</td><td>&nbsp;</td><td rowspan="2">Вычислительные системы, сети и телекоммуникации, 306а</td></tr>
+                <tr><td>&#9726;Пакеты компьютерной математики, 402</td></tr>
+                <tr><td>10:50 - 12:20</td><td colspan="2">Алгоритмы и анализ сложности, 406</td></tr>
+                <tr><td>12:40 - 14:10 </td><td colspan="2">Обьектно-ориентированное программирование, 406</td></tr>
+                <tr><th rowspan="5">ЧТ</th><td rowspan="2">09:00 - 10:30</td><td rowspan="2">Вычислительные системы, сети и телекоммуникации, 306а</td><td>&#9650;Пакеты компьютерной математики, 307</td></tr>
+                <tr><td>&#9726;Операционные системы, 307</td></tr>
+                <tr><td>10:50 - 12:20</td><td colspan="2">КПВ Английский язык в информационной сфере, 410, Психология делового общения, 412</td></tr>
+                <tr><td rowspan="2">12:40 - 14:10 </td><td>&#9650;Операционные системы, 306a</td><td></td></tr>
+                <tr><td colspan="2">&#9726;Операционные системы, 304</td></tr>
+            </tbody>
+            
+        </table>
+    </body>
+</html>
