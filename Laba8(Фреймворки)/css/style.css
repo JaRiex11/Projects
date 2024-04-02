@@ -1,0 +1,104 @@
+
+:root {
+    --bg-color: #ffffff;
+    --bg-color-orange: orange;
+    --bg-color-blue: blue;
+    --bg-color-lightpink: lightpink;
+    --bg-color-yellow: yellow;
+    --bg-color-yellowgreen: yellowgreen;
+    --bg-color-purple: purple;
+    a{color: rgb(0, 200, 255);}
+}
+[data-theme="dark"] {
+    --bg-color: #2a2332;
+    --bg-color-orange: #2f2738;
+    --bg-color-blue: #665876;
+    --bg-color-lightpink: #392f45;
+    --bg-color-yellow: #443753;
+    --bg-color-yellowgreen: #4f4061;
+    --bg-color-purple: #251f2b;
+    a{color: #a39aad;}
+    p{color: #d0cbd5;}
+    h1{color: #ffffff;}
+}
+@media (width >= 768px){
+    body{
+        background-color: var(--bg-color);
+    }
+    
+    #orange {
+        background-color: var(--bg-color-orange);
+        /* height: 150px;
+        grid-column-start: 1;
+        grid-column-end: 4; */
+    }
+    #blue {
+        background-color: var(--bg-color-blue);
+
+    }
+    #pink {
+        background-color: var(--bg-color-lightpink);
+        /* height: 300px; */
+    }
+    #yellow {
+        background-color: var(--bg-color-yellow);
+        
+    }
+    #green {
+        background-color: var(--bg-color-yellowgreen);
+    }
+    #purple {
+        background-color: var(--bg-color-purple);
+        /* grid-column-start: 2;
+        grid-column-end: 4; */
+    }
+    p{
+        overflow: hidden;
+        font-size: 30px;
+        font-family: "Arial";
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 10%;
+    }
+}
+
+@media (width < 768px){
+    body{
+        background-color: var(--bg-color);
+    }
+    #purple {
+        background-color: var(--bg-color-purple);
+        /* min-height: 300px;
+        grid-column-start: 2;
+        grid-column-end: 3; */
+    }
+    #orange {
+        background-color: var(--bg-color-orange);
+        /* height: 100px;
+        grid-column-start: 1;
+        grid-column-end: 3; */
+    }
+    #blue {
+        background-color: var(--bg-color-blue);
+
+    }
+    #pink {
+        background-color: var(--bg-color-lightpink);
+        /* height: 300px; */
+    }
+    #yellow {
+        background-color: var(--bg-color-yellow);
+        /* grid-column: 1 / 3; */
+    }
+    #green {
+        background-color: var(--bg-color-yellowgreen);
+    }
+    p{
+        overflow: hidden;
+        font-size: 30px;
+        font-family: "Arial";
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+}
