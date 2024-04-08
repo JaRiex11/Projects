@@ -1,109 +1,124 @@
 html,
-        .container{
-           display: flex;
-           width: 100%;
-           min-height: 100vh;
-           min-width: 100vh;
-           flex-wrap: wrap;
-        }
-        .item {
-			flex-wrap: wrap-reverse;
-            min-width: 100%;
-		}
-        
-        .square {
-            background-color: aqua;
-            border: thick solid red;
-            border: dashed;
-            border-radius: 25px;
-        }
-        #square-1{
-            position: absolute;
-            top: 10%;
-            bottom: 10%;
-            left: 4%;    
-            right: 4%;
-        }
-        #square-2{
-            opacity: 70%;
-            align-self: center;
-        }
-        #square-3{
-            position: absolute;
-            top: 3%;
-            bottom: 3%;
-            left: 13%;    
-            right: 13%;
-        }
-		body {
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0;
-		}
-		div {
-			width: 500px;
-			height: 100px;
-		}
-        .purple {
-            display: inline-flex;
-			justify-content: center;
-            align-items: center;
-            background-color: purple;
-            width: 50%;
-            height: 25%;
-		}
-		.orange {
-			background-color: orange;
-            width: 50%;
-            height: 25%;
-		}
-		.blue {
-			background-color: blue;
-            width: 20%;
-            height: 75%;
-		}
-		.pink {
-			background-color: lightpink;
-            width: 100%;
-            height: 20%;
-		}
-		.yellow {
-			background-color: yellow;
-            width: 20%;
-            height: 75%;
-		}
-		.green {
-			background-color: yellowgreen;
-            width: 60%;
-            height: 75%;
-		}
-        p{
-            overflow: hidden;
-            background-color: red;
-            text-align: center;
-            font-size: 30px;
-            font-family: "Arial";
-            margin-top: 10%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10%;
-        }
-        #first {
-            width: 60%;
-            height: 13%;
-            padding: 8%;
-            padding-bottom: 0%; 
-            border-radius: 0px 25px 0px 25px;
-            border-top: dashed;
-            border-right: dashed;
-            border-width: 5px;
-        }
-        #second {
-            width: 60%;
-            height: 59%;
-            padding: 8%;
-            border: 5px solid;
-            border-radius: 25px;
-            border-color: blue;
-        }
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100vh;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex-wrap: wrap-reverse;
+    min-width: 100%;
+}
+
+.square {
+    background-color: aqua;
+    border: thick solid red;
+    border: dashed;
+    border-radius: 25px;
+}
+
+#square-1 {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 4%;
+    right: 4%;
+}
+
+#square-2 {
+    opacity: 70%;
+    align-self: center;
+}
+
+#square-3 {
+    position: absolute;
+    top: 3%;
+    bottom: 3%;
+    left: 13%;
+    right: 13%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 500px;
+    height: 100px;
+}
+
+.purple {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+    width: 50%;
+    height: 25%;
+}
+
+.orange {
+    background-color: orange;
+    width: 50%;
+    height: 25%;
+}
+
+.blue {
+    background-color: blue;
+    width: 20%;
+    height: 75%;
+}
+
+.pink {
+    background-color: lightpink;
+    width: 100%;
+    height: 20%;
+}
+
+.yellow {
+    background-color: yellow;
+    width: 20%;
+    height: 75%;
+}
+
+.green {
+    background-color: yellowgreen;
+    width: 60%;
+    height: 75%;
+}
+
+p {
+    overflow: hidden;
+    background-color: red;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Arial";
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+
+#first {
+    width: 60%;
+    height: 13%;
+    padding: 8%;
+    padding-bottom: 0%;
+    border-radius: 0px 25px 0px 25px;
+    border-top: dashed;
+    border-right: dashed;
+    border-width: 5px;
+}
+
+#second {
+    width: 60%;
+    height: 59%;
+    padding: 8%;
+    border: 5px solid;
+    border-radius: 25px;
+    border-color: blue;
+}
