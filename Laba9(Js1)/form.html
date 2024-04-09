@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
 
     <script src="js/form.js"></script>
 </head>
+
 <body>
     <form action="">
         <legend>Выберите фигуру:</legend>
         <select id="figures">
-            <option  id="input1" type="radio" name="figure" value="cube"> Куб</option>
-            <option  id="input2" type="radio" name="figure" value="cylinder"> Цилиндр</option>
-            <option  id="input3" type="radio" name="figure" value="ball"> Шар</option> 
-            <option  id="input4" type="radio" name="figure" value="pyramid"> Пирамида</option> 
-            <option  id="input5" type="radio" name="figure" value="cone"> Конус</option> <br>
+            <option id="input1" type="radio" name="figure" value="cube"> Куб</option>
+            <option id="input2" type="radio" name="figure" value="cylinder"> Цилиндр</option>
+            <option id="input3" type="radio" name="figure" value="ball"> Шар</option>
+            <option id="input4" type="radio" name="figure" value="pyramid"> Пирамида</option>
+            <option id="input5" type="radio" name="figure" value="cone"> Конус</option> <br>
         </select>
         <!--<div id="figures">
             <label><input onclick="figureTypeIs();" id="input1" type="radio" name="figure" value="cube"> Куб</label>
@@ -28,11 +30,15 @@
         <button type="button" onclick="figureTypeIs();">Начать ввод данных</button>
         <legend>Введите исходные значения:</legend>
         <span id="values">
+
         </span>
         <br>
         <button type="button" onclick="solveVolume();">Посчитать объём</button>
         <legend>Результат:</legend>
-        <div id="result">Пусто</div>
+        <div id="result">
+            <p>Пусто</p>
+        </div>
     </form>
 </body>
+
 </html>
