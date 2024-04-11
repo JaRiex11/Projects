@@ -98,7 +98,7 @@ function solveVolume() {
         console.log(typeof (input));
 
         if (input < 0 || isNaN(input)) {
-            code.innerHTML = '<strong>Введены некоректные данные!</strong>';
+            code.innerHTML = '<strong>Введены некорректные данные!</strong>';
         } else {
             volume = input * input * input;
             code.innerHTML = volume;
@@ -117,7 +117,7 @@ function solveVolume() {
         }
         console.log(typeof (input));
         if (rad < 0 || hi < 0 || isNaN(rad) || isNaN(hi)) {
-            code.innerHTML = '<strong>Введены некоректные данные!</strong>';
+            code.innerHTML = '<strong>Введены некорректные данные!</strong>';
 
         } else {
             volume = PI * rad * rad * hi;
@@ -134,7 +134,7 @@ function solveVolume() {
             return;
         }
         if (rad < 0 || isNaN(rad)) {
-            code.innerHTML = '<strong>Введены некоректные данные!</strong>';
+            code.innerHTML = '<strong>Введены некорректные данные!</strong>';
 
         } else {
             volume = 4 / 3 * PI * rad * rad * rad;
@@ -152,7 +152,7 @@ function solveVolume() {
             return;
         }
         if (sqrt < 0 || hi < 0 || isNaN(sqrt) || isNaN(hi)) {
-            code.innerHTML = '<strong>Введены некоректные данные!</strong>';
+            code.innerHTML = '<strong>Введены некорректные данные!</strong>';
 
         } else {
             volume = 1 / 3 * sqrt * hi;
@@ -170,7 +170,7 @@ function solveVolume() {
             return;
         }
         if (rad < 0 || hi < 0 || isNaN(rad) || isNaN(hi)) {
-            code.innerHTML = '<strong>Введены некоректные данные!</strong>';
+            code.innerHTML = '<strong>Введены некорректные данные!</strong>';
 
         } else {
             volume = 1 / 3 * PI * rad * rad * hi;
