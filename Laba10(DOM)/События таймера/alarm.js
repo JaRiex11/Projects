@@ -1,4 +1,6 @@
 let color;
+let timerId
+let delayNumber;
 document.addEventListener("DOMContentLoaded", () => {
     // Узлы DOM уже доступны для манипуляций.
 
@@ -10,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("go").addEventListener("click", okayKlick);
         document.getElementById("stop").addEventListener("click", stopKlick);
         document.getElementById("pause").addEventListener("click", pauseKlick);
+        document.getElementById("stop2").addEventListener("click", stop2Klick);
+        document.getElementById("start").addEventListener("click", startKlick);
     }
 
     function okayKlick() {
@@ -25,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("go").removeAttribute("disabled");
             return;
         }
-        let timerId = setInterval(function () {
+        timerId = setInterval(function () {
             if (i <= 0) {
                 if (min <= 0) {
                     console.log("stop!"); //остановка
@@ -52,6 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 1000);
     }
 
+    function pauseKlick() {
+        console.log("pause!");
+        document.getElementById("go").removeAttribute("disabled");
+        clearInterval(timerId);
+    }
+
     function stopKlick() {
         console.log("stop!"); //остановка
         document.getElementById("go").removeAttribute("disabled");
@@ -62,6 +72,28 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("sec").value = 0;
         document.getElementById("min").value = 0;
         console.log("0!");
+    }
+
+    let array = [false, false, false, false, false, false, false, false, false, false];
+    function startKlick() {
+        delayNumber = document.getElementById("delay").value;
+        console.log("старт");
+
+        let rows = document.getElementById("rows").ChildNodes;
+        for (let i = 0; i < 10; i++) {
+
+            /*if (window.getComputedStyle(rows[i], null).visibility != 'none') {
+                array[i] = true;
+                console.log("в иф попали");
+            }*/
+            console.log(i + ": ");
+            //console.log(rows[i]);
+            //console.log(getComputedStyle(rows[i]).visibility);
+        }
+    }
+
+    function stop2Klick() {
+
     }
 
 });

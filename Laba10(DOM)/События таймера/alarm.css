@@ -3,11 +3,18 @@ body {
 	margin-right: 20%;
 }
 
-body, input, button {
+body,
+input,
+button {
 	font-family: "Arial", sans-serif;
 	font-size: 20pt;
 }
 
 div {
 	margin: 0.5em;
+}
+
+li {
+	border: 2px solid black;
+	visibility: visible;
 }
