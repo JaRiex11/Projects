@@ -74,26 +74,50 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("0!");
     }
 
-    let array = [false, false, false, false, false, false, false, false, false, false];
+    let timer2;
+    let array = [true, true, true, true, true, true, true, true, true, true];
     function startKlick() {
         delayNumber = document.getElementById("delay").value;
         console.log("старт");
+        console.log(delayNumber);
 
-        let rows = document.getElementById("rows").ChildNodes;
+        let rows = document.getElementsByClassName("row");
         for (let i = 0; i < 10; i++) {
 
-            /*if (window.getComputedStyle(rows[i], null).visibility != 'none') {
-                array[i] = true;
-                console.log("в иф попали");
-            }*/
             console.log(i + ": ");
-            //console.log(rows[i]);
-            //console.log(getComputedStyle(rows[i]).visibility);
+            console.log(array[i]);
         }
+
+        timer2 = setInterval(hideElems, delayNumber, rows);
     }
 
     function stop2Klick() {
+        clearInterval(timer2);
+        console.log("пауза");
+        let rows = document.getElementsByClassName("row");
+        for (let i = 0; i < 10; i++) {
+            //console.log(i);
+            rows[i].style.visibility = "visible";
+            array[i] = true;
+        }
+    }
 
+    function hideElems(rows) {
+        console.log("Старт таймера")
+        for (let i = 0; i < 10; i++) {
+            if (Math.random() > 0.5) {
+                //console.log(rows[i]);
+                if (array[i] === true) {
+                    rows[i].style.visibility = "hidden";
+                    array[i] = false;
+                    //console.log("Попали в иф 1");
+                } else {
+                    rows[i].style.visibility = "visible";
+                    array[i] = true;
+                    //console.log("ELSE 2");
+                }
+            }
+        }
     }
 
 });
