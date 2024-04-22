@@ -2,11 +2,8 @@ let color;
 let timerId
 let delayNumber;
 document.addEventListener("DOMContentLoaded", () => {
-    // Узлы DOM уже доступны для манипуляций.
 
-    // функция будет вызвана один раз после полной загрузки страницы
     window.addEventListener('load', init);
-    // здесь нет доступа к элементам DOM, страница еще не загружена
 
     function init() {
         document.getElementById("go").addEventListener("click", okayKlick);
@@ -82,12 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(delayNumber);
 
         let rows = document.getElementsByClassName("row");
-        for (let i = 0; i < 10; i++) {
-
-            console.log(i + ": ");
-            console.log(array[i]);
-        }
-
         timer2 = setInterval(hideElems, delayNumber, rows);
     }
 
