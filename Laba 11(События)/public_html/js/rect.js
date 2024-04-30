@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("color").addEventListener("click", okayKlick);
     }
 
-    document.addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function (event) {
         if (event.code == 'ArrowUp' && event.ctrlKey) {
             let blocks = document.getElementsByClassName('rectangle');
 
@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 blocks[i].style.backgroundColor = "rgb(" + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
             }
         }
-      });
+    });
 
+    //Создание прямоугольников внутри области
     for (let i = 0; i < N; i++) {
         let child1 = document.createElement("p");
         child1.setAttribute("class", "rectangle");
@@ -34,33 +35,52 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("rectanglearea").appendChild(child1);
     }
 
+    //Добавление слушателей событий на каждый прямоугольник
     let blocks = document.getElementsByClassName('rectangle');
 
     for (let i = 0; i < blocks.length; i++) {
         blocks[i].addEventListener("mouseover", mouseIn);
+        blocks[i].addEventListener("mouseout", mouseOut);
         blocks[i].addEventListener("dblclick", doubleKlick);
     }
 
+    //реализация следования за курсором области с координатами
+    document.getElementById('following').style.top = 0 + 'px';
+    document.getElementById('following').style.left = 0 + 'px';
     let event;
-    window.addEventListener('mousemove', follow, event);
+    let recArea = document.getElementById('rectanglearea');
+    recArea.addEventListener('mousemove', follow, event);
+    recArea.addEventListener('mouseover', followStart);
+    recArea.addEventListener('mouseout', followEnd);
+
+    let block = document.getElementById('following');
 
     function follow(event) {
-        let block = document.getElementById('following');
-        block.style.top = event.clientX + "px";
-        block.style.left = event.clientY + "px";
-        console.log(block.style.top);
+        block.style.top = event.clientY + "px";
+        block.style.left = event.clientX + "px";
+        //console.log(document.getElementById('following'));
+        block.textContent = "x = " + event.clientX + "\n\n" + "y = " + (event.clientY);
     }
 
+    function followStart() {
+        block.removeAttribute('class');
+    }
+
+    function followEnd() {
+        block.setAttribute('class', "unvisible");
+    }
+
+    //Далее всё связанное с прямоугольниками
     function changing() {
         let str = document.getElementById('colortouse').value;
         let ch = str[str.length - 1];
-        if(!reg.test(ch)){
-            console.log(false);
+        if (!reg.test(ch)) {
+            //console.log(false);
             str = str.replace(ch, "");
             document.getElementById('colortouse').value = str;
         }
 
-        if(str.length < 6){
+        if (str.length < 6) {
             document.getElementById('color').setAttribute('disabled', '');
             console.log("Недостаточно символов");
         } else {
@@ -81,7 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function mouseIn() {
-        this.style.backgroundColor = "rgb(" + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
+        let termColor = "rgb(" + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ", " + parseInt(Math.random() * 255) + ")";
+        this.style.backgroundColor = termColor;
+        block.style.color = termColor;
+    }
+
+    function mouseOut() {
+        block.style.color = 'black';
     }
 
     function doubleKlick() {
@@ -89,15 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function flashing() {
-        console.log("idet");
+        console.log("time to flashing!");
         blocks = document.getElementsByClassName('flash');
         let colors = new Array();
 
         for (let i = 0; i < blocks.length; i++) {
             colors[i] = blocks[i].style.backgroundColor;
-            console.log(blocks[i]);
+            //console.log(blocks[i]);
             blocks[i].setAttribute('class', 'rectangle flash flash2');
-            console.log(blocks[i]);
+            //console.log(blocks[i]);
         }
 
         timer2 = setTimeout(setRed, 200);
@@ -129,5 +155,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    timerId = setInterval(flashing, 5000)
+    timerId = setInterval(flashing, 10000)
 });
