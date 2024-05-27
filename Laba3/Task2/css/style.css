@@ -1,0 +1,50 @@
+body {
+    width: 100vw;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    border-spacing: 5px;
+    border-collapse: separate;
+    border: 1px solid black;
+}
+
+caption {
+    background-color: blue;
+    caption-side: top;
+    text-align: left;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+thead {
+    background-color: green;
+    padding-bottom: 10px;
+}
+
+tfoot {
+    background-color: yellow;
+    padding-bottom: 10px;
+}
+
+tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+tr:nth-child(odd) {
+    background: rgb(93, 238, 56);
+}
+
+tr:hover {
+    background-color: rgb(41, 103, 25);
+}
+
+td:hover {
+    background-color: rgb(248, 255, 54);
+}
+
+td {
+    padding-left: 3%;
+    padding-right: 5%;
+}
