@@ -9,23 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("lightTheme").addEventListener('click', light);
         document.getElementById("darkTheme").addEventListener('click', dark);
         document.getElementById('clearTheme').addEventListener('click', clearTheme);
-        if(localStorage.getItem("themeColor") !== "light" || localStorage.getItem("themeColor") !== "dark"){
+        document.getElementById('geolocation').addEventListener('click', geolocation);
+        if (localStorage.getItem("themeColor") !== "light" || localStorage.getItem("themeColor") !== "dark") {
             switchTheme();
         }
 
+    }
+
+    function geolocation() {
         let child = document.getElementById('text');
 
         let geo = navigator.geolocation;
         if (geo in navigator) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                child.textContent = "Данные геолокации:" + "\n"+ "Долгота:" + position.coords.longitude + '\n' + "Широта;" + position.coords.latitude;
+                child.textContent = "Данные геолокации:" + "\n" + "Долгота:" + position.coords.longitude + '\n' + "Широта;" + position.coords.latitude;
             });
         } else {
-            console.log("попали в else");
+            console.log("попали в geo else");
             child.textContent = "Доступ к геолокации отсутствует";
         }
-
-
     }
 
     function light() {
@@ -47,16 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function switchTheme() {
         console.log("switch");
         themeColor = localStorage.getItem("themeColor");
-        if(themeColor == "dark"){
+        if (themeColor == "dark") {
             document.documentElement.setAttribute('data-theme', "dark");
-        } else if(themeColor == "light"){
+        } else if (themeColor == "light") {
             document.documentElement.removeAttribute('data-theme');
-        } 
+        }
     }
 
     function clearTheme() {
         console.log("clear");
-        //document.documentElement.removeAttribute('data-theme');
+        document.documentElement.removeAttribute('data-theme');
         localStorage.clear("themeColor");
     }
 

@@ -6,8 +6,17 @@
     --bg-color-yellow: yellow;
     --bg-color-yellowgreen: yellowgreen;
     --bg-color-purple: purple;
-    a{color: rgb(0, 200, 255);}
+
+    a {
+        color: rgb(0, 200, 255);
+    }
+
+    #text {
+        border: 2px solid black;
+    }
+
 }
+
 [data-theme="dark"] {
     --bg-color: #2a2332;
     --bg-color-orange: #2f2738;
@@ -16,9 +25,22 @@
     --bg-color-yellow: #443753;
     --bg-color-yellowgreen: #4f4061;
     --bg-color-purple: #251f2b;
-    a{color: #a39aad;}
-    p{color: #d0cbd5;}
-    h1{color: #ffffff;}
+
+    a {
+        color: #a39aad;
+    }
+
+    p {
+        color: #d0cbd5;
+    }
+
+    h1 {
+        color: #ffffff;
+    }
+
+    #text {
+        border: 2px solid white;
+    }
 }
 
 #buttons_container {
@@ -26,23 +48,23 @@
     align-items: center;
 }
 
-
-
-@media (width >= 1200px){
+@media (width >=1200px) {
     button {
         width: 150px;
         height: 40px;
     }
 
-    body{
+    body {
         background-color: var(--bg-color);
         transition: .4s;
     }
-    .container{
+
+    .container {
         margin: 0;
         display: grid;
         grid-template-columns: 1fr 2.5fr 1fr;
     }
+
     .orange {
         background-color: var(--bg-color-orange);
         height: 150px;
@@ -52,30 +74,36 @@
         justify-content: space-between;
         transition: .4s;
     }
+
     .blue {
         background-color: var(--bg-color-blue);
         transition: .4s;
     }
+
     .pink {
         background-color: var(--bg-color-lightpink);
         height: 300px;
         transition: .4s;
     }
+
     .yellow {
         background-color: var(--bg-color-yellow);
         transition: .4s;
     }
+
     .green {
         background-color: var(--bg-color-yellowgreen);
         transition: .4s;
     }
+
     .purple {
         background-color: var(--bg-color-purple);
         grid-column-start: 2;
         grid-column-end: 4;
         transition: .4s;
     }
-    p{
+
+    p {
         overflow: hidden;
         font-size: 30px;
         font-family: "Arial";
@@ -86,22 +114,24 @@
     }
 }
 
-@media (width < 1200px) and (width >= 960px){
+@media (width < 1200px) and (width >=960px) {
     button {
         width: 120px;
         height: 40px;
     }
 
-    body{
+    body {
         background-color: var(--bg-color);
         transition: .4s;
     }
-    .container{
+
+    .container {
         margin: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
         transition: .4s;
     }
+
     .purple {
         background-color: var(--bg-color-purple);
         min-height: 300px;
@@ -109,6 +139,7 @@
         grid-column-end: 3;
         transition: .4s;
     }
+
     .orange {
         background-color: var(--bg-color-orange);
         height: 100px;
@@ -118,26 +149,31 @@
         justify-content: space-between;
         transition: .4s;
     }
+
     .blue {
         background-color: var(--bg-color-blue);
         transition: .4s;
 
     }
+
     .pink {
         background-color: var(--bg-color-lightpink);
         height: 300px;
         transition: .4s;
     }
+
     .yellow {
         background-color: var(--bg-color-yellow);
         grid-column: 1 / 3;
         transition: .4s;
     }
+
     .green {
         background-color: var(--bg-color-yellowgreen);
         transition: .4s;
     }
-    p{
+
+    p {
         overflow: hidden;
         font-size: 30px;
         font-family: "Arial";
@@ -146,25 +182,29 @@
     }
 }
 
-@media (width < 960px){
+@media (width < 960px) {
     button {
         height: 40px;
     }
-    body{
+
+    body {
         background-color: var(--bg-color);
         transition: .4s;
     }
-    .container{
+
+    .container {
         margin: 0;
         display: grid;
         grid-template-columns: 1fr;
     }
+
     .purple {
         background-color: var(--bg-color-purple);
         min-height: 300px;
         transition: .4s;
-        
+
     }
+
     .orange {
         background-color: var(--bg-color-orange);
         min-height: 100px;
@@ -172,25 +212,30 @@
         justify-content: space-between;
         transition: .4s;
     }
+
     .blue {
         background-color: var(--bg-color-blue);
         transition: .4s;
 
     }
+
     .pink {
         background-color: var(--bg-color-lightpink);
         transition: .4s;
         height: 250px;
     }
+
     .yellow {
         background-color: var(--bg-color-yellow);
         transition: .4s;
     }
+
     .green {
         background-color: var(--bg-color-yellowgreen);
         transition: .4s;
     }
-    p{
+
+    p {
         overflow: hidden;
         font-size: 30px;
         font-family: "Arial";
