@@ -2,10 +2,6 @@ let mydata;
 fetch('data/classics.json')
     .then(response => response.json())
     .then(jsonData => mydata = jsonData);
-let cosmodata;
-fetch('data/astronauts.json')
-    .then(response => response.json())
-    .then(jsonData => cosmodata = jsonData);
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -72,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function astroLoad() {
-        console.log(cosmodata.length);
+        console.log(mydata.length);
         astroIterator = 10;
         outputAstro();
     }
@@ -82,9 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         child.setAttribute('id', 'astronauts');
 
         for (let i = astroIterator - 10; i < astroIterator; i++) {
-            child.innerHTML += (i + 1) + ': ' + cosmodata[i].Profile.Nationality + ' ';
-            child.innerHTML += cosmodata[i].Profile.Name + '<br>';
-            console.log(cosmodata[i].Profile.Name);
+            child.innerHTML += (i + 1) + ': ' + mydata[i].bibliography.author.name + '<br>';
             console.log("i = " + i);
         }
 
@@ -104,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         but2.setAttribute('id', "nextPage");
         but2.addEventListener('click', nextPage);
         but2.textContent = 'Вперёд';
-        if(astroIterator >= cosmodata.length){
+        if(astroIterator >= mydata.length){
             but2.setAttribute('disabled', 'disabled');
         } else {
             but2.removeAttribute('disabled');
@@ -117,8 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function lastPage() {
         astroIterator -= 10;
         let cont = document.getElementById('astro-container');
-        cont.removeChild('p');
-        cont.removeChild('button');
+        let child = document.getElementById('astronauts');
+        cont.removeChild(child);
+        cont.removeChild(document.getElementById('nextPage'));
+        cont.removeChild(document.getElementById('lastPage'));
         outputAstro();
     }
 
