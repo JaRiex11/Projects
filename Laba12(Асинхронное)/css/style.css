@@ -10,6 +10,10 @@
     a {
         color: rgb(0, 200, 255);
     }
+    .selected{
+        background-color: green;
+        color: white;
+    }
 }
 
 [data-theme="dark"] {
@@ -32,6 +36,7 @@
     h1 {
         color: #ffffff;
     }
+
 }
 
 @media (width >=1200px) {
